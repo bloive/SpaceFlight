@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SpaceFlight</string>
+    <string name="article_image">Article Image</string>
+    <string name="fragment_title">Proposal</string>
+    <string name="description">Description</string>
+    <string name="empty">Nothing to show</string>
+</resources>
