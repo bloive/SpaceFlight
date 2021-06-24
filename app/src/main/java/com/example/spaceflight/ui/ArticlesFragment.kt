@@ -1,6 +1,7 @@
 package com.example.spaceflight.ui
 
 import android.os.Bundle
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,11 +34,22 @@ class ArticlesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        articlesViewModel = ViewModelProvider(this).get(ArticlesViewModel::class.java)
-
         initViewPager()
         observe()
         articlesViewModel.init()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        d("STATE: ", "Resume")
+        articlesViewModel.intervalCall(5000)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        d("STATE: ", "Stop")
+        articlesViewModel.job?.cancel()
+        articlesViewModel.job = null
     }
 
     override fun onDestroyView() {
@@ -57,5 +69,4 @@ class ArticlesFragment : Fragment() {
             adapter.notifyDataSetChanged()
         })
     }
-
 }

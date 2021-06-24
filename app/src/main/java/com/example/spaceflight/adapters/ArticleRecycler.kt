@@ -67,10 +67,9 @@ class ArticleRecycler : RecyclerView.Adapter<ArticleRecycler.ArticleViewHolder>(
 
     override fun getItemCount() = items.size
 
-    fun setData(items: MutableList<ArticleItem>): MutableList<ArticleItem> {
+    fun setData(items: MutableList<ArticleItem>) {
         this.items.clear()
         this.items.addAll(items)
         notifyDataSetChanged()
-        return items
     }
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ArticlesFragment">
+    tools:context=".ui.ArticlesFragment"
+    android:background="#08000000">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/article_viewpager"
@@ -16,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnCancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProposal" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProposal"/>
+<!--        app:layout_goneMarginTop="?attr/actionBarSize"/>-->
 
     <TextView
         android:id="@+id/tvProposal"
